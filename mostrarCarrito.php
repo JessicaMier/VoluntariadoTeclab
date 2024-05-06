@@ -65,7 +65,7 @@ include 'carrito.php';
     <h1 class="tituloMain"> Tecno Shop</h1>
     <p class="text-center mt-5 fs-4 mb-5">Verifica tus productos antes de confirmar la compra:</p>
     <div class="centrar-div">
-        <button class="button button-outline btn colorCard"><a href="index.php">Seleccionar Productos</a></button> 
+        <button class="button button-outline btn colorCard btnHover"><a class ="text-dark" href="index.php">Seleccionar Productos</a></button> 
     </div> 
     <hr>
 <main>

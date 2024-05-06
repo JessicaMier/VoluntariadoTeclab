@@ -106,7 +106,7 @@ include '../carrito.php';
                     <input type="hidden" name= "precio" id="precio" value = "<?php echo openssl_encrypt($producto['precio'],COD,KEY);?>">
                     <input type="hidden" name= "cantidad" id="cantidad" value = "<?php echo openssl_encrypt(1,COD,KEY);?>" >
                     
-                    <button class=" btn btn-dark container"
+                    <button class=" btn btn-dark container btnHover"
                     name="btnAccion"
                     value="Agregar"
                     type="submit">Agregar</button>

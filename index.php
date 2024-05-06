@@ -183,7 +183,7 @@ include 'carrito.php';
                     <input type="hidden" name= "precio" id="precio" value = "<?php echo openssl_encrypt($producto['precio'],COD,KEY);?>">
                     <input type="hidden" name= "cantidad" id="cantidad" value = "<?php echo openssl_encrypt(1,COD,KEY);?>" >
                     
-                    <button class=" btn btn-dark container"
+                    <button class=" btn btn-dark container btnHover"
                     name="btnAccion"
                     value="Agregar"
                     type="submit">Agregar</button>
@@ -306,6 +306,7 @@ include 'carrito.php';
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     <script src="./js/script.js"></script>
+    
 </body>
 
 </html>
