@@ -2,7 +2,6 @@
 include 'global/config.php';
 include 'global/conexion.php';
 include 'carrito.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,95 +53,70 @@ include 'carrito.php';
                         </li>
                     </ul>
                 </div>
-            <div class="nombreEmpresa mt-1 text-center">
-                        <h3 class="text-white text-center px-1">Tecno Shop</h3>
-                    </div>
-                    <div class="carrito mt-1 text-center">
-                        <a href="mostrarCarrito.php"><button class="btn btn-secondary ms-2 px-3"><i
-                                    class="bi bi-cart-fill"></i>(<?php
-                            echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);
-                        ?>)</button>
-                        </a>
-                    </div>
-                    
-                    <a href="./registro.html"><button type="button"
-                            class="btn btn-secondary ms-2 px-3">Registrarse</button>
-                    </a>
-                </div>
             </div>
         </nav>
         <!-- ----------------------------------------------fin nav--------------------------------------->
     </div>
 </header>
-<!-- --------------------------------titulo pagina------------------------------------------------ -->
-
-<h1 class="tituloMain pt-5 mt-5">Carrito de compras</h1>
-
-    <h1 class="tituloMain"> Tecno Shop</h1>
-    <p class="text-center mt-5 fs-4 mb-5">Verifica tus productos antes de confirmar la compra:</p>
-    <div class="centrar-div">
-        <button class="button button-outline btn colorCard btnHover"><a class ="text-dark" href="index.php">Seleccionar Productos</a></button> 
-    </div> 
-    <hr>
-<main>
-    
-    <section class="container">
-    <?php if(!empty($_SESSION['CARRITO'])){?>
-    
-    <div class="row">
-        <?php $total = 0; ?>
-        <?php foreach($_SESSION['CARRITO'] as $indice=>$producto){ ?>
-        <div class ="col-md-8 mx-auto text-center">
-            <div class="card mb-3">
-                <div class="card-body colorCard">
-                    <h5 class="card-title"><?php echo $producto['NOMBRE']; ?></h5>
-                    <p class="card-text">Cantidad: <?php echo $producto['CANTIDAD']; ?></p>
-                    <p class="card-text">Precio unitario: $<?php echo $producto['PRECIO']; ?></p>
-                    <p class="card-text">Total: $<?php echo number_format($producto['PRECIO'] * $producto['CANTIDAD'], 2); ?></p>
-                    <form action="" method="post">
-                        <input type="hidden" name="id" value="<?php echo openssl_encrypt($producto['ID'], COD, KEY); ?>">
-                        <button class="btn-eliminar btn btn-secondary" type="submit" name="btnAccion" value="Eliminar">
-                            <i class="bi bi-trash"></i> Eliminar
-                        </button>
-                    </form>
-
+<h1 class="tituloMain">Seleccione su forma de Pago</h1>
+<div class="container mt-5">
+    <p class="text-center fs-3">Pagos con tarjeta</p>
+        <div class="row justify-content-center ">
+            <div class="col-md-6">
+                <div class="card formTarjeta">
+                    <div class="card-body">
+                        <h5 class="card-title">Ingrese los datos de su tarjeta de crédito/débito</h5>
+                        <form>
+                            <div class="form-group">
+                                <label class="textLabel" for="card_number">Número de Tarjeta:</label>
+                                <input type="text" class="form-control diseñoInput" id="card_number" placeholder="Ingrese el número de su tarjeta">
+                            </div>
+                            <div class="form-group">
+                                <label class="textLabel" for="expiration_date">Fecha de Vencimiento:</label>
+                                <input type="text" class="form-control diseñoInput" id="expiration_date" placeholder="MM/AA">
+                            </div>
+                            <div class="form-group">
+                                <label class="textLabel" for="cvv">CVV:</label>
+                                <input type="text" class="form-control diseñoInput" id="cvv" placeholder="Ingrese el código de seguridad">
+                            </div>
+                            <button type="submit" class="btn btn-dark mx-auto container-fluid">Enviar</button>
+                        </form>
+                    </div>
                 </div>
-            </div>  
-        </div>
-       
-        <?php $total += $producto['PRECIO'] * $producto['CANTIDAD']; ?>
-        <?php }?>
-    
-    </div>
-    <div class="colorCard text-center p-3 fs-4 fw-bold mx-auto col-md-6" role="alert">
-            Total del carrito: $<?php echo number_format($total, 2); ?>
-    </div> 
-    <div class="row justify-content-center">
-    <div class="text-center p-3 col-md-6">
-        <div class="d-flex justify-content-center">
-            <form action="" method="post" class="mx-2">
-                <input type="hidden" name="btnAccion" value="Vaciar">
-                <button class="btn btn-secondary" type="submit">Vaciar Carrito</button>
-            </form>
-            <form action="" method="post" class="mx-2">
-                <input type="hidden" name="btnAccion" value="Comprar">
-                <button class="btn btn-secondary" type="submit">Comprar Carrito</button>
-            </form>
+            </div>
         </div>
     </div>
-</div>
-
-</div>     
-    <?php }else{ ?>
-    <div class="colorCard col-md-8 mx-auto p-3">
-        <p class="text-center mt-2 fs-4 mb-2 fw-bold">No hay productos en el carrito</p>
+    <div class="container mt-5">
+    <p class="text-center fs-3">Datos del titular de la cuenta</p>
+        <div class="row justify-content-center ">
+            <div class="col-md-6">
+                <div class="card formTarjeta">
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Ingrese los datos de su tarjeta de crédito/débito</h5> -->
+                        <form>
+                            <div class="form-group">
+                                <label class="textLabel" for="nombreCompleto">Nombre Completo:</label>
+                                <input type="text" class="form-control diseñoInput" id="nombreCompleto" placeholder="Ingrese nombre y apellido">
+                            </div>
+                            <div class="form-group">
+                                <label class="textLabel" for="nombreCompleto">DNI:</label>
+                                <input type="text" class="form-control diseñoInput" id="nombreCompleto" placeholder="Ingrese nombre y apellido">
+                            </div>
+                            <div class="form-group">
+                                <label class="textLabel" for="domicilio">Domicilio</label>
+                                <input type="text" class="form-control diseñoInput" id="domicilio" placeholder="Ingrese calle y numero">
+                            </div>
+                            <div class="form-group">
+                                <label class="textLabel" for="localidad">Localidad:</label>
+                                <input type="text" class="form-control diseñoInput" id="localidad" placeholder="Ingrese su localidad">
+                            </div>
+                            <button type="submit" class="btn btn-dark mx-auto container-fluid">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <?php } ?>
-</section> 
-    
-</main>
-
-
 
 <!-- --------------------------------pie de página------------------------------------ -->
 <footer class=" border-top text-center footerColor p-3 container-fluid mt-5">

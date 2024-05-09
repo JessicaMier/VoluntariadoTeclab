@@ -80,8 +80,28 @@ if (isset($_POST['btnAccion'])) {
                 break;
             }
             break;
-    }
+        case 'Vaciar':
+            vaciarCarrito();
+            $mensaje .= "Carrito vaciado.<br>";
+            break;
+
+        case 'Comprar':
+            comprarCarrito();
+            $mensaje .= "Compra realizada.<br>";
+            break;
+
+        }
+
+    
 }
 
 
+function comprarCarrito() {
+    header('Location: compraRealizada.php');
+    vaciarCarrito();
+    exit();
+}
+function vaciarCarrito() {
+    unset($_SESSION['CARRITO']);
+}
 ?>

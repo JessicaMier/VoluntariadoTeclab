@@ -155,8 +155,8 @@ include 'carrito.php';
             <a href="#" class="badge badge-success">Ver Carrito</a></a>
         </div> -->
         <!-- -------------------------titulo------------------------------------- -->
-        <div class="container alert alert-secondary mt-5 rounded">
-            <h2 class="tituloMain container-fluid">Nuestros Productos</h2>
+        <div class="container alert colorCard mt-5 rounded">
+            <h2 class="tituloMain container-fluid fst-italic">Nuestros Productos</h2>
         </div>
         <!-- ------------------------------productos card------------------------------ -->
          <div  class="container text-center row d-flex justify-content-center mx-auto">
@@ -197,7 +197,7 @@ include 'carrito.php';
         
     </main>
     <!-- -----------------------------medios de pago-------------------------------- -->
-    <div class=" container alert alert-secondary mt-5 text-center tituloMain">
+    <div class=" container alert colorCard mt-5 text-center tituloMain fst-italic">
         <h3>Medios de Pago</h3>
     </div>
     <div class ="container text-center" id="divDolar"></div>

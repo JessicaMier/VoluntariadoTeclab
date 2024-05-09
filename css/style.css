@@ -13,6 +13,7 @@
 } 
 .bgColor{
     margin-top: 100px;
+    /* background: linear-gradient(#a1b6e4, white, pink); */
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     background-size: cover;
 }
@@ -43,7 +44,7 @@
  /*-------------------------------productos destacados ---------------------------------*/
  .colorCard{
     background: radial-gradient(circle, rgba(238, 174, 202, 0.678) 0%, rgba(148, 188, 233, 0.637) 100%);
-    box-shadow: 0px 0px 8px 8px rgb(238, 231, 231);
+    box-shadow: 0px 0px 8px 8px rgb(78, 77, 77);
  }
  .imgCard{
     height: 200px; 
@@ -121,6 +122,10 @@
     visibility: visible;
     color:#c23829;
 }
+::placeholder { 
+    font-size: 16px;
+    font-style: italic;
+}
 
 /*------------------------pie de pagina--------------------------------*/
 .footerColor{
@@ -156,4 +161,22 @@
 background: linear-gradient(45deg, rgb(0, 183, 255), rgb(255, 0, 255));
 color: black;
 font-weight: 800;
+/* box-shadow: 0 0 2px 2px rgb(92, 89, 89); */
+box-shadow: 0px 0px 5px 5px rgb(78, 77, 77);
+font-style: italic;
+}
+
+
+/* --------------------------Formulario de compra----------------------------------- */
+.textLabel{
+    font-size: 24px;
+    font-family:'Dancing script' ;
+}
+.formTarjeta{
+    background: linear-gradient(#a1b6e4, white, pink);
+    box-shadow: 0 0 2px 2px rgb(92, 89, 89);
+}
+.diseñoInput{
+    border-color: rgb(230, 221, 221);
+    box-shadow: 0 0 2px 2px rgb(92, 89, 89);
 }
