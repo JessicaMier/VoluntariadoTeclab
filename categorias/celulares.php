@@ -50,12 +50,12 @@ include '../carrito.php';
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li><a class="dropdown-item text-white itemCategorias botonCategoria" 
-                                    href="./categorias/televisores.php">Smart Tv</a></li>
+                                    href="./televisores.php">Smart Tv</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li><a class="dropdown-item text-white itemCategorias botonCategoria" 
-                                    href="./categorias/notebook.php">Notebook y
+                                    href="./notebook.php">Notebook y
                                             Accesorios</a></li>
                                 </ul>
                             </li>
